@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 # input parameters
-Loan = 75000
-DownPayment = 15000
+Loan = 200000
+DownPayment = 40000
 AnnualInterestRate = 0.035
 StockMarketRate = 0.06
-LoanLength = 120
-CurrentTimeYears = 1
+LoanLength = 240            # length of loan in months
+CurrentTimeYears = 1        # current time in years
 RentPrice = 800
 HouseSellValue = 0.85
 
