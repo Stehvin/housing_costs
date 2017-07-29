@@ -10,6 +10,20 @@ CurrentTimeYears = 1
 RentPrice = 800
 HouseSellValue = 0.85
 
+def main():
+    MonthlyPay = FixedMonthlyPayment(Loan - DownPayment, AnnualInterestRate, 
+                                     LoanLength)
+    LeftToPay = RemainingBalance(Loan - DownPayment, AnnualInterestRate, 
+                                 LoanLength, CurrentTimeYears*12)
+    OppCost = OpportunityCost(DownPayment, MonthlyPay, StockMarketRate, 
+                              CurrentTimeYears, RentPrice)
+    print('Monthly Payment: ' + str(MonthlyPay))
+    print('RemainingBalance: ' + str(LeftToPay))
+    print('Opportunity Costs (Assuming $' + str(RentPrice) + ' rent): ' + 
+          str(OppCost))
+    print('Net Gain/Loss: ' + str((Loan*HouseSellValue) - 
+                                   LeftToPay + OppCost))
+
 def FixedMonthlyPayment(UnpaidLoanAmount, AnnualInterestRate, Months):
     """Calculate the fixed monthly loan payment.
     Formula: P = L[c(1 + c)n]/[(1 + c)n - 1]
@@ -55,15 +69,5 @@ def OpportunityCost(DownPayment, fixed_monthly_payment, StockMarketRate,
                     -1) + balance
     return Total_Cost
 
-MonthlyPay = FixedMonthlyPayment(Loan - DownPayment, AnnualInterestRate, 
-                                 LoanLength)
-LeftToPay = RemainingBalance(Loan - DownPayment, AnnualInterestRate, LoanLength,
-                             CurrentTimeYears*12)
-OppCost = OpportunityCost(DownPayment, MonthlyPay, StockMarketRate, 
-                          CurrentTimeYears, RentPrice)
-print('Monthly Payment: ' + str(MonthlyPay))
-print('RemainingBalance: ' + str(LeftToPay))
-print('Opportunity Costs (Assuming $' + str(RentPrice) + ' rent): ' + 
-      str(OppCost))
-                                              
-print('Net Gain/Loss: ' + str((Loan*HouseSellValue) - LeftToPay + OppCost))
+if __name__ == "__main__":
+    main()
