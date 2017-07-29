@@ -6,8 +6,8 @@ DownPayment = 40000
 AnnualInterestRate = 0.035
 StockMarketRate = 0.06
 LoanLength = 240            # length of loan in months
-CurrentTimeYears = 1        # current time in years
-RentPrice = 800
+CurrentTimeYears = 5        # current time in years
+RentPrice = 1000
 HouseSellValue = 0.85
 
 def main():
