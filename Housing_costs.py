@@ -18,7 +18,7 @@ def main():
     OppCost = OpportunityCost(DownPayment, MonthlyPay, StockMarketRate, 
                               CurrentTimeYears, RentPrice)
     print('Monthly Payment: ' + str(MonthlyPay))
-    print('RemainingBalance: ' + str(LeftToPay))
+    print('Remaining Balance: ' + str(LeftToPay))
     print('Opportunity Costs (Assuming $' + str(RentPrice) + ' rent): ' + 
           str(OppCost))
     print('Net Gain/Loss: ' + str((Loan*HouseSellValue) - 
