@@ -16,7 +16,7 @@ Annual interest rate of the loan. Input as a decimal, rather than a percentage.
 
 ### Loan Term (Length of Loan)
 Variable name: LoanLength
-The length of time until the loan is paid off, in months.
+The length of time until the loan is paid off, in years.
 
 ### Years Living in House
 Variable name: CurrentTimeYears
