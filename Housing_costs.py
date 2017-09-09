@@ -4,25 +4,25 @@
 Loan = 200000
 DownPayment = 40000
 AnnualInterestRate = 0.035
-StockMarketRate = 0.06
-LoanLength = 240            # length of loan in months
-CurrentTimeYears = 5        # current time in years
-RentPrice = 1000
+LoanLength = 20             # length of loan in years
+CurrentTimeYears = 10       # current time in years
 HouseSellValue = 0.85
+RentPrice = 1000
+StockMarketRate = 0.06
 
 def main():
     MonthlyPay = FixedMonthlyPayment(Loan - DownPayment, AnnualInterestRate, 
-                                     LoanLength)
+                                     LoanLength*12)
     LeftToPay = RemainingBalance(Loan - DownPayment, AnnualInterestRate, 
-                                 LoanLength, CurrentTimeYears*12)
+                                 LoanLength*12, CurrentTimeYears*12)
     OppCost = OpportunityCost(DownPayment, MonthlyPay, StockMarketRate, 
                               CurrentTimeYears, RentPrice)
-    print('Monthly Payment: ' + str(MonthlyPay))
-    print('Remaining Balance: ' + str(LeftToPay))
+    print('Monthly Payment: ' + '{:.2f}'.format(MonthlyPay))
+    print('Remaining Balance: ' + '{:.2f}'.format(LeftToPay))
     print('Opportunity Costs (Assuming $' + str(RentPrice) + ' rent): ' + 
-          str(OppCost))
-    print('Net Gain/Loss: ' + str((Loan*HouseSellValue) - 
-                                   LeftToPay + OppCost))
+          '{:.2f}'.format(OppCost))
+    print('Net Gain/Loss: ' + '{:.2f}'.format((Loan*HouseSellValue) - 
+                                               LeftToPay + OppCost))
 
 def FixedMonthlyPayment(UnpaidLoanAmount, AnnualInterestRate, Months):
     """Calculate the fixed monthly loan payment.
